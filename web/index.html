@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+        <!-- BOOTSTRAP -->
+        <script src="javaScript/popper.js" type="text/javascript"></script>
+        <script src="javaScript/bootstrap.min.js" type="text/javascript"></script>
+        <link href="estilosCss/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+
+        <!-- ANIMATED CSS -->
+        <link href="estilosCss/animatedCss.css" rel="stylesheet" type="text/css"/>
+
+        <!-- ESTILOS -->
+        <link href="https://fonts.googleapis.com/css?family=Goblin+One&display=swap" rel="stylesheet">
+        <link href="estilosCss/estilos.css" rel="stylesheet" type="text/css"/>
+
+        <!-- FUNCIONES -->
+        <script src="javaScript/jquery.js" type="text/javascript"></script>
+        <script src="javaScript/UsuarioService.js" type="text/javascript"></script>
+        <script src="javaScript/EventoService.js" type="text/javascript"></script>
+        <script src="javaScript/animation.js" type="text/javascript"></script>
+
+        <!-- FLICKITY -->
+        <link href="estilosCss/flickity.css" rel="stylesheet" type="text/css"/>
+        <script src="javaScript/flickity.js" type="text/javascript"></script>
+    </head>
+
+    <body onload="compurebaSesion()" style="background-image: url('images/fondo.jpg'); background-repeat: no-repeat; background-attachment: fixed; background-position: center;">
+
+        <!-- CAPA MENU -->
+        <nav class="navbar navbar-expand-lg" id="MENU" style="display: none">
+            <div class="container-fluid">
+                <a class="navbar-brand">@</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"><img class="img-fluid" src="images/icono.png"/></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarText">
+                    <ul class="navbar-nav d-flex w-100 mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" onclick="pulsaHome()" href="#">home<span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item mr-auto">
+                            <a class="nav-link" onclick="listarEventos()" href="#" >historia</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="NAMEUSUARIO" href="#"></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" onclick="cerrarSesion()" href="#">cerrar sesión</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- LOGGIN -->
+        <div class="container" id="LOGGIN">
+            <form>
+                <div class="form-group">
+                    <label for="EMAIL">introduce tu email</label>
+                    <input type="email" class="form-control border-white border-top-0 border-left-0 border-right-0" id="EMAIL">
+                </div>
+                <div class="form-group">
+                    <label for="PASS">introduce tu contraseña</label>
+                    <input type="password" class="form-control border-white border-top-0 border-left-0 border-right-0" id="PASS">
+                </div>
+                <button type="button" onclick="iniciaSesion()" class="btn">iniciar Sesion</button>
+                <button type="button" onclick="pulsaRegistrar()" style="margin-left: 140px" class="btn">Registrarse</button>
+            </form>
+        </div>
+
+        <!-- REGISTRO -->
+        <div class="container" id="REGISTRO" style="display: none">
+            <form>
+                <div class="form-group">
+                    <label for="nombrereg">Nombre</label>
+                    <input type="text" class="form-control border-white border-top-0 border-left-0 border-right-0" id="NOMBREREG">
+                </div>
+                <div class="form-group">
+                    <label for="emailreg">Email</label>
+                    <input type="email" class="form-control border-white border-top-0 border-left-0 border-right-0" id="EMAILREG">
+                </div>
+                <div class="form-group">
+                    <label for="passreg">Pass</label>
+                    <input type="password" class="form-control border-white border-top-0 border-left-0 border-right-0" id="PASSREG">
+                </div>
+                <button type="button" onclick="registrarse()" class="btn">Aceptar</button>
+                <button type="button" onclick="cancelaRegistro()" style="margin-left: 210px" class="btn">Cancelar</button>
+            </form>
+        </div>
+
+        <!-- HOME -->
+        <div id="HOME" class="animated fadeIn" style="display: none">
+            <div class="container" id="CONTENEDORSTARWARS">
+                <img src="images/starWars.png" class="img-fluid"/>
+            </div>
+            <!-- Projects section v.3 -->
+            <section class="container" style="max-width: 1280px !important" >
+                <div class="row">
+                    <div class="col-lg-5 mb-lg-0 mb-5">
+                        <img src="images/img2.jpg" alt="Sample project image" class="img-fluid rounded z-depth-1">
+                    </div>
+                    <div class="col-lg-7">
+                        <div class="row mb-3">
+                            <div class="col-md-1 col-2">
+                                <i class="fas fa-book fa-2x cyan-text"></i>
+                            </div>
+                            <div class="col-md-11 col-10">
+                                <h5 class="font-weight-bold mb-3">historia completa de star wars</h5>
+                                <p>Conoce toda la historia de star wars 5000 años antes de la batalla de Yavin, hasta
+                                    finalizar las guerras clon con el auge del imperio y la destrucción de la República Galáctica.
+                                    Conoce todas las tramas, todos los personajes y la vida de este fantástico mundo.<br><br>
+                                    Vaya directamente a la línea temporal, haciendo click en ver más.</p>
+                                <button type="button" onclick="listarEventos()" class="btn float-right"> ver mas...</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr class="my-5">
+                <div class="row">
+                    <div class="col-lg-7">
+                        <div class="row mb-3">
+                            <div class="col-md-1 col-2">
+                                <i class="far fa-chart-bar fa-2x indigo-text"></i>
+                            </div>
+                            <div class="col-md-11 col-10">
+                                <h5 class="font-weight-bold mb-3">galeria de personajes</h5>
+                                <p>Incluimos una galería de personajes para aquellos fans que quieran conocer cada personaje,
+                                    sus caracteristicas y su influencia.<br><br>
+                                    Para acceder a la galería, haga click en ver más.</p>
+                                <button type="button"  class="btn float-left"> ver mas...</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5">
+                        <img src="images/img1.jpg" alt="Sample project image" class="img-fluid rounded z-depth-1">
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- HISTORIA -->
+        <div>
+            <div id="EVENTOS" class="main-carousel" style="display: none"></div>
+        </div>
+
+        <div class="container" id="INFO" style="display: none; margin-top: 30px !important">
+            <div class="row justify-content-center">
+                <div col-lg-6>
+                    <div id="BUTTON" class="container text-center" style="display: none; padding-top: 20px; padding-bottom: 20px"></div>
+                </div>
+                <div col-lg-6>
+                    <div id="BUTTONDESCRIPCION" class="container text-center" style="display: none; padding-top: 20px; padding-bottom: 20px"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-2 border-right border-light">
+                    <div id="NOMBREEVENTO" style="color: white !important; font-family: 'Starjedi'"></div>
+                </div>
+                <div class="col-lg-10">
+                    <div id="DESCRIPCIONEVENTO" class="text-left" style="color: white !important"></div>
+                </div>
+            </div>
+        </div>
+        <div class="container" id="PERSONAJEBYEVENTO" style="display: none">
+            <div class="row"></div>
+        </div>
+
+        <!-- DESCRIPCION PERSONAJE -->
+        <div class="container" id="INFORMACIONPJ" style="display: none">
+            <div class="row">
+                <div class="col-lg-2 col-xs-12" >
+                    <div id="IMGCHARACTER" style="color: white !important"></div>
+                </div>
+                <div class="col-lg-2 col-xs-12">
+                    <div id="NAMECHARACTER" style="color: white !important; font-family: 'Starjedi'"></div>
+                </div>
+                <div class="col-lg-8 col-xs-12" >
+                    <div id="DESCRIPCIONPJS" class="text-left" style="color: white !important"></div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,176 @@
+@font-face {
+    font-family: "Starjedi";
+    src: url('../fuente/Starjedi.ttf');
+}
+
+@font-face {
+    font-family: "IBMPlexSerif-Light";
+    src: url('../fuente/IBMPlexSerif-Light.ttf');
+}
+
+h1{
+    font-family: "Starjedi" !important;
+    color: white !important;
+}
+
+h5{
+    color: white !important;
+    font-family: "Starjedi" !important;
+}
+
+p{
+    font-family: 'IBMPlexSerif-Light' !important;
+}
+
+input{
+    box-shadow: none !important;
+}
+
+label{
+    color: white !important;
+    font-family: 'Starjedi';
+}
+
+button{
+    background-color: transparent !important;
+    box-shadow: none !important;
+    color: white !important; 
+    border: 1px solid white !important;
+    font-family: 'Starjedi';
+}
+
+p{
+    color: white !important;
+}
+
+/* EFECTOS DE LOGGIN */
+#LOGGIN{
+    background-color: transparent;
+    width: 480px;
+    height: 350px;
+    margin-top: 18%;
+}
+
+#EMAIL{
+    background-color: transparent;
+}
+
+
+#PASS{
+    background-color: transparent;
+}
+
+
+/* ESTILOS DEL REGISTRO */
+
+#REGISTRO{
+    background-color: transparent;
+    width: 480px;
+    height: 350px;
+    margin-top: 15%;
+}
+
+#EMAILREG{
+    background-color: transparent;
+}
+
+#PASSREG{
+    background-color: transparent;
+}
+
+#NOMBREREG{
+    background-color: transparent;
+}
+
+.msjError{
+    font-family: 'Starjedi';
+    color: white !important;
+}
+
+/* ESTILOS DE HOME */
+
+#MENU{
+    font-family: 'Starjedi' !important;
+}
+
+.nav-link{
+    color: white !important;
+    padding-left: 40px !important;
+    font-family: 'Starjedi' !important;
+}
+
+.navbar-brand{
+    color: white !important;
+}
+
+/* HOME */
+
+/* EVENTOS */
+.main-carousel{
+    margin-top: 70px !important;
+}
+
+.carousel-cell{
+    margin-right: 15px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.carousel-cell img{
+    display: block;
+    height: 200px;
+}
+
+@media screen and(min-width: 768px){
+    .carousel-cell img{
+        height: 220px;
+    }
+}
+
+.carousel-cell img{
+    transition: transform .5s; 
+}
+
+.carousel-cell img:hover{
+    filter: brightness(125%);
+    box-shadow: 0px -3px 0px red inset;
+    transform: scale(1.2);
+}
+
+/* descripcion */
+#DESCRIPCIONEVENTO{
+    font-family: 'IBMPlexSerif-Light';
+}
+
+/* estilo de la card */
+.card-img-top {
+    width: 75%;
+    height: 8rem;
+}
+
+.card{
+    padding-top: 30px !important;
+    padding-right: 10px !important;
+    text-align: left !important;
+    background-color: transparent !important;
+    color: white !important;
+}
+
+#IMGCHARACTER{
+    width: 75%;
+    height: auto;
+}
+
+/* ESTILOS HOME */
+.carousel-inner{
+    height: 480px;   
+}
+
+.carousel-item img{
+    width: 30%;
+}
+
+#CONTENEDORSTARWARS{
+    height: 55%;
+    width: 65%;
+}
